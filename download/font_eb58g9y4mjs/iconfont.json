@@ -1,0 +1,16 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "2188101",
+      "name": "符号-右箭头",
+      "font_class": "fuhao-youjiantou",
+      "unicode": "e627",
+      "unicode_decimal": 58919
+    }
+  ]
+}

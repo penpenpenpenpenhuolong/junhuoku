@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{margin: 0;padding: 0;}
+        
+        span{
+            margin: 0 auto; width: 80%;display: block;
+            text-align: center;
+            
+        }
+        .box1{
+            width: 90%; height: 50%;
+            font-size: 12.5em; text-align: center;
+            margin: 50px auto; display: block;
+        }
+        .box2{
+            width: 90%; margin: 50px auto; text-align: center; font-size: 3.12em;
+        }
+        i{
+            color: red; padding: 0 .75em; font-style: normal;
+        }
+        div{
+            display:none;
+        }
+        @media all and (max-width:320px){
+            html{
+                font-size: 0.75em;
+            }
+            .box1{
+                font-size: 3em; text-align:left;
+            }
+        }
+        @media all and (min-width:321px) and (max-width:375px){
+            html{
+                font-size: 14px;
+            }
+            .box1{
+                font-size: 4em; text-align:left;
+            }
+        }
+        @media all and (min-width:376px) and (max-width:414px){
+            html{
+                font-size: 1em;
+            }
+            .box1{
+                font-size: 5em; text-align:left;
+            }
+        }
+        
+    
+    </style>
+</head>
+<body>
+    <nva class="box1">个人学习测试网站！</nva>
+    <span>
+        注：本站只供个人学习，不做任何商业其它用途，如有侵权请联系：QQ616056709，微信：wtc9090
+    </span>
+    <nav class="box2"><i></i></nav>
+    <script>
+        var box2=document.querySelector('.box2');
+        var a=3;
+        setInterval(function(){
+            if(a<=0){
+                location.href='demo.html'
+                return;
+            }
+            a--
+            box2.innerHTML=`正在跳转主页，请稍等<i>${a}</i>`
+        },1000)
+	</script>	
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/zhuce.css" type="text/css">
+
+    <link rel="icon" href="./image/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./image/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="wrap">
+        <div class="cen">
+            <img src="./images/xm01.jpg" alt="" style="margin-left: 240px;">
+        </div>
+    </div>
+
+    <div class="nav">
+        <div class="cen">
+            <ul class="nav-r">
+                <li><a href="">小米商城</a></li>
+                <li>丨</li>
+                <li><a href="">小米商城</a></li>
+                <li>丨</li>
+                <li><a href="">小米商城</a></li>
+                <li>丨</li>
+                <li><a href="">小米商城</a></li>
+                <li>丨</li>
+                <li><a href="">小米商城</a></li>
+                <li>丨</li>
+                <li><a href="">小米商城</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- 注册头 -->
+    <nav id="denglu">
+        <h1>请注册。</h1>
+       
+        <input type="text" placeholder="ID (字母,数字组合)" class="b1" style="outline: none;">
+        <p class="iconfont icon-zhanghu">ID 填写不正确。</p>
+        <input type="password" placeholder="密码(数字,字母组合)" class="b2" style="outline: none;">
+        <p class="iconfont icon-zhanghu">密码填写不正确。</p>
+        <span>你的ID是你用来登录的电子邮件地址或手机号码。</span>
+        <input type="text" class="b3" style="width: 80px;height: 20px;float: left;outline: none;">
+		  <span id="yz" style=" background:url(./image/1.png);width:150px;font-style: italic;font-size: 30px;
+           height: 50px;border: 1px solid black;display: inline-block;margin-left: 40px;text-align: center;line-height: 50px;"></span>
+		  <a href="javascript:;" id='btn'>看不清</a>
+        <!-- 注册 按钮 -->
+        <button class="btn-z">注册</button>
+        <!-- 注册 -->
+        <a href="">有ID？立即登录。</a>
+        
+    </nav>
+    <!-- 求帮助 -->
+    <nav id="bangzhu">
+        <span>需要更多帮助？立即在线交流或致电 400-666-8800。</span>
+    </nav>
+     <!--   底部 ul    -->
+     <nav id="btm">
+        <nav class="btm-center">
+            <!-- 底部结束 -->
+            <nav class="btm-center-bottom">
+                <nav class="btm-center-bottom-top">
+                    <span>更多选购方式：<a href="demo.html">前往小米官方零售店</a>，致电 400-666-8800 或查找在你附近的<a href="demo.html">授权经销商</a>。</span>
+                </nav>
+                <nav class="btm-center-bottom-btm">
+                    <span>Copyright © 2020 Apple Inc. 保留所有权利。</span>
+                    <a href="demo.html">隐私政策</a><i>|</i>
+                    <a href="demo.html">使用条款</a><i>|</i>
+                    <a href="">销售政策</a><i>|</i>
+                    <a href="demo.html">法律信息</a><i>|</i>
+                    <a href="">网站地图</a>
+                </nav>
+            </nav>
+        </nav>
+    </nav>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/zhuce.js"></script>
+    <script src="./js/public.js"></script>
+    <script>
+        function showCode(){
+		var code = ""
+		//生成验证码
+		for(var i=0;i<6;i++){
+			//i=0 72
+			//i=1 78
+			//i=2 52
+			//i=3 111
+			//i=4 91 i--(3)
+			var num = rand(48,122);
+			if((num>57&&num<65)||(num>90&&num<97)){
+				//本次作废
+				i--;
+			}else{
+				//把编码转成字符串
+				code += String.fromCharCode(num);
+			}
+		}		
+		//在yz里面显示验证码
+		$id('yz').innerHTML = code;
+	}
+
+	window.onload = function(){
+		//当页面里面的标签加载完成以后会触发onload事件,事件触发以后会执行事件驱动程序
+		//1 页面打开以后,直接在id是yz的标签里面显示6位的验证码
+		showCode();
+		//2 点击id是btn的标签,重新生成一个6位的验证码,并显示在yz标签里面
+		$id('btn').onclick = showCode;
+
+	}
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html><!-- W3C规范 -->
+<html lang="en"><!-- 声明 -->
+<head>
+<meta charset="UTF-8">
+<!-- 声明当前页面的三要素 -->
+<title>css3仿小米官网导航下拉菜单代码</title>
+<!-- 样式 -->
+<style type="text/css">
+*{margin: 0px;padding:0px;}
+.nav {position: relative;width:994px;height:52px;background: #404144;margin:0 auto;}
+.nav li{list-style: none;float: left;line-height: 50px;}
+.nav li a{display: block;text-decoration: none;color: #FFFFFF;padding: 0px 15px;font-family: "微软雅黑";}
+.nav li a:hover .xs{display: block;}
+.nav li a:hover {background: #333333;}
+.nav li a .xs{border:1px solid #cccccc;border-top:none;display: none;width:992px;background:#FFFFFF;position: absolute;top:50px;left:0px;}
+.nav li a .xs .xiao {position:absolute;top:-8px;border-left: 8px solid transparent;border-right: 8px solid transparent;border-bottom: 8px solid #FFFFFF;width:0px;height:0px;z-index: 999;}
+.nav li:nth-child(1) .xiao {left:20px;}
+.nav li:nth-child(2) .xiao {left:98px;}
+.nav li:nth-child(3) .xiao {left:177px;}
+.nav li:nth-child(4) .xiao {left:255px;}
+.nav li:nth-child(5) .xiao {left:348px;}
+.nav li:nth-child(6) .xiao {left:427px;}
+.nav li:nth-child(7) .xiao {left:496px;}
+.nav li:nth-child(8) .xiao {left:576px;}
+.nav li:nth-child(9) .xiao {left:646px;}
+.nav li:nth-child(10) .xiao {left:706px;}
+</style>
+</head>
+
+<body><script src="/demos/googlegg.js"></script>
+<br>
+<div class="nav">
+	<ul>
+		<li><a href="#">首页</a></li>
+		<li><a href="#">小米手机
+		<div class="xs">
+			<div class="xiao"></div>
+			<img src="img/1.jpg" />
+		</div>
+		</a></li>
+		<li><a href="#">红米
+		<div class="xs">
+			<div class="xiao"></div>
+			<img src="img/2.jpg" />
+		</div>
+		</a></li>
+		<li><a href="#">小米平板</a></li>
+		<li><a href="#">小米电视</a></li>
+		<li><a href="#">盒子
+		<div class="xs">
+			<div class="xiao"></div>
+			<img src="img/3.jpg" />
+		</div>
+		</a></li>
+		<li><a href="#">路由器
+		<div class="xs">
+			<div class="xiao"></div>
+			<img src="img/4.jpg" />
+		</div>
+		</a></li>
+		<li><a href="#">合约机</a></li>
+		<li><a href="#">服务</a></li>
+		<li><a href="#">社区</a></li>
+	</ul>
+</div>
+
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+<p>适用浏览器：360、FireFox、Chrome、Safari、Opera、傲游、搜狗、世界之窗. 不支持IE8及以下浏览器。</p>
+<p>来源：<a href="http://www.lanrenzhijia.com/" target="_blank">懒人素材</a></p>
+</div>
+</body>
+</html>

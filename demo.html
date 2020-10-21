@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./jslbt/css/css.css">
+    <link rel="stylesheet" href="./countdown/css/cdn.css" type="text/css">
+    <script src="./jslbt/js/js.js"></script>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        html,body{
+            width: 100%;height: 100%;background-color: white;
+        }
+        .cen{
+            width: 1300px;margin: 0 auto;
+        }
+        .nav a{
+           text-decoration: none; color: aliceblue;
+        }
+        ul{
+            list-style: none;
+        }
+        
+        .wrap{
+            height: 120px;background-color: #fe4e36;
+        }
+        .nav{
+            height: 40px;background-color: #333333;
+        }
+        .nav-r li{
+            color: aliceblue;line-height: 40px;float: left;padding-right: 20px;
+        }
+        /* .nav-l{
+            float: left;
+        } */
+        .nav-l li{
+            color: aliceblue;line-height: 40px;float: right;padding-right: 20px;
+        }
+        .banner{
+            height: 460px;
+        }
+        #Tz_banner{
+        width:237px;/*px 像素  宽度*/
+        height:458px;/*高*/
+        background:#455158;/*背景*/
+        /* 上 右 下 左 顺时针*/
+        position:relative;/*相对定位 参照物*/
+    }
+    #Tz_banner .firstLi{
+        width:237px;
+        height:42px;
+        cursor:pointer;/*鼠标样式*/
+        font-size:14px;/*字体大小*/
+        text-indent:20px;/*首行缩进*/
+        line-height:42px;/*行高*/
+        color:#fff;/*字体颜色*/
+    }
+    #Tz_banner .firstLi:hover{background:#ff9900;}/*鼠标划过后的样式*/
+    #Tz_banner .firstLi .info{
+        height:458px;
+        background:#fff;
+        padding-left:10px;
+        position:absolute;/*绝对定位 改变位置的盒子*/
+        left:237px;
+        top:0px;
+        display:none;
+    }
+    #Tz_banner .firstLi .info li{
+        width:248px;
+        height:77px;
+        text-indent:0px;
+        margin-right:15px;
+        position:absolute;
+    }
+    #Tz_banner .firstLi .info li a.title{
+        height:77px;
+        display:block;/*变成块级元素*/
+        float:left;
+        line-height:77px;
+        left:0px;
+        top:0px;
+    }
+    #Tz_banner .firstLi .info li a.title img{
+        height: 50px;
+        margin:16.5px 15px 0px 15px;
+        float:left;
+    }
+    #Tz_banner .firstLi .info li a.title span{
+        float:left;
+        height:77px;
+        line-height:77px;color:#222;
+    }
+    #Tz_banner .firstLi .info li a.buy{
+        width:60px;
+        display:block;
+        float:right;
+        margin-top:25px;
+        border:1px solid #f60;/*边框 粗细 样式 颜色*/
+        line-height:24px;
+        text-align:center;/*文字居中*/
+        color:#f60;
+    }
+    #Tz_banner .firstLi .info li a.buy:hover{
+        background:#f60;
+        color:#fff;
+    }
+        .ms{
+            height: 275px;margin-top: 30px;  
+        }
+        .ceno{
+            width: 1300px;height: 275px;
+            
+            background: url(./image/xm7.jpg)no-repeat right  #e1f0f7;
+            margin: 0 auto;
+        }
+        .pac{
+            height: 460px;background-color: aquamarine;margin-top: 30px;
+        }
+        .pac ul li
+        {
+            width: 150px;height: 76.5px;background-color: #455158;
+            text-align: center;line-height: 77px;
+        }
+        .pac ul li a{
+            color: white;
+        }
+        .active{
+            height: 170px;padding-top: 30px;
+        }
+        .act-r{
+            width: 240px;height: 170px;float: left;
+        }
+        .act-r ul{
+            width: 240px;height: 170px;font-size: 0;
+        }
+        .act-r ul li{
+            float: left;
+        }
+        .act-l{
+            width: 1000px;height: 170px;float:right;
+        }
+        .act-l ul{
+            width: 1000px;height: 170px;float: right;
+        }
+        .act-l ul li{
+            float: right;margin-left: 15px;
+        }
+        .main{
+            height: 780px;background-color: #f5f5f5;margin-top: 30px;
+        }
+        .hongmi{
+            width: 255px;height: 350px;float: left;margin-right: 6px;margin-top: 30px;
+            background-color: white;position: relative;
+        }
+        .dianshi{
+            width: 255px;height: 350px;float: left;margin-right: 6px;margin-top: 30px;
+            background-color: white;
+        }
+        .qup{
+            width: 255px;height: 350px;float: left;margin-right: 6px;margin-top: 30px;
+            background-color: white;
+        }
+        .kongtiao{
+            width: 255px;height: 350px;float: left;margin-right: 6px;margin-top: 30px;
+            background-color: white;
+        }
+        .xiyiji{
+            width: 255px;height: 350px;float: right;margin-top: 30px;background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="cen">
+            <img src="./images/xm01.jpg" alt="" style="height: 120px;margin-left: 240px;">
+        </div>
+    </div>
+
+    <div class="nav">
+        <div class="cen">
+            <ul class="nav-r">
+                <li><a href="">小米商城</a></li>
+                <li>丨</li>
+                <li><a href="">小米商城</a></li>
+                <li>丨</li>
+                <li><a href="">小米商城</a></li>
+                <li>丨</li>
+                <li><a href="">小米商城</a></li>
+                <li>丨</li>
+                <li><a href="">小米商城</a></li>
+                <li>丨</li>
+                <li><a href="">小米商城</a></li>
+            </ul>
+            <ul class="nav-l">
+                <li><a href="login.html">登录</a></li>
+                <li>丨</li>
+                <li><a href="zhuce.html">注册</a></li>
+                <li>丨</li>
+                <li><a href="cart.html">购物车</a></li>
+            </ul>
+        </div>
+    </div>
+   
+    <div class="banner">
+        
+        <div id="boxhdp" style="width: 1300px;height: 460px;">
+            <ul id="img">
+                <li class="current"><img src="./image/05.jpg"></li>
+                <li><img src="./image/06.jpg"></li>
+                <li><img src="./image/07.jpg"></li>
+                <li><img src="./image/08.jpg"></li>
+                <li><img src="./image/10.jpg"></li>
+            </ul>
+           
+            <div id="Tz_banner">
+                <ul style="position: absolute;left: 0;">
+                    <li class="firstLi">手机 电话卡       >
+                        <div class="info">
+                            <ul>
+                                <li><a class="title" href="#"><img src="./image/er2.jpg"><span>小米Note2</span><!--没有任何意义的行内元素--></a><!--超链接--><a 
+                                class="buy" href="#">选购</a></li>
+                                <li><a class="title" href="#"><img src="./image/er2.jpg"><span>小米Note2</span><!--没有任何意义的行内元素--></a><!--超链接--><a class="buy" href="#">选购</a></li>
+                                <li><a class="title" href="#"><img src="./image/er2.jpg"><span>小米Note2</span><!--没有任何意义的行内元素--></a><!--超链接--><a class="buy" href="#">选购</a></li>
+                                <li><a class="title" href="#"><img src="./image/er2.jpg"><span>小米Note2</span><!--没有任何意义的行内元素--></a><!--超链接--><a  class="buy" href="#">选购</a></li>
+                                <li><a class="title" href="#"><img src="./image/er2.jpg"><span>小米Note2</span><!--没有任何意义的行内元素--></a><!--超链接--><a  class="buy" href="#">选购</a></li>
+                                <li><a class="title" href="#"><img src="./image/er2.jpg"><span>小米Note2</span><!--没有任何意义的行内元素--></a><!--超链接--><a  class="buy" href="#">选购</a></li>
+                                <li><a class="title" href="#"><img src="./image/er2.jpg"><span>小米Note2</span><!--没有任何意义的行内元素--></a><!--超链接--><a  class="buy" href="#">选购</a></li>
+                                <li><a class="title" href="#"><img src="./image/er2.jpg"><span>小米Note2</span><!--没有任何意义的行内元素--></a><!--超链接--><a class="buy" href="#">选购</a></li>
+                                <li><a class="title" href="#"><img src="./image/er2.jpg"><span>小米Note2</span><!--没有任何意义的行内元素--></a><!--超链接--><a  class="buy" href="#">选购</a></li>
+                                <li><a class="title" href="#"><img src="./image/er2.jpg"><span>小米Note2</span><!--没有任何意义的行内元素--></a><!--超链接--><a class="buy" href="#">选购</a></li>
+                                <li><a class="title" href="#"><img src="./image/er2.jpg"><span>小米Note2</span><!--没有任何意义的行内元素--></a><!--超链接--><a  class="buy" href="#">选购</a></li>
+                                <li><a class="title" href="#"><img src="./image/er2.jpg"><span>小米Note2</span><!--没有任何意义的行内元素--></a><!--超链接--><a class="buy" href="#">选购</a></li>
+                                <li><a class="title" href="#"><img src="./image/er2.jpg"><span>小米Note2</span><!--没有任何意义的行内元素--></a><!--超链接--><a class="buy" href="#">选购</a></li>
+                                <li><a class="title" href="#"><img src="./image/er2.jpg"><span>小米Note2</span><!--没有任何意义的行内元素--></a><!--超链接--><a class="buy" href="#">选购</a></li>
+                                <li><a class="title" href="#"><img src="./image/er2.jpg"><span>小米Note2</span><!--没有任何意义的行内元素--></a><!--超链接--><a class="buy" href="#">选购</a></li>
+                                <li><a class="title" href="#"><img src="./image/er2.jpg"><span>小米Note2</span><!--没有任何意义的行内元素--></a><!--超链接--><a class="buy" href="#">选购</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="firstLi">笔记本 平板       >
+                        <div class="info">
+                            <ul>
+                                <li><a class="title" href="#"><img src="./image/01.jpg"><span>小米Note2</span><!--没有任何意义的行内元素--></a><!--超链接--><a class="buy" href="#">选购</a></li>
+                                <li><a class="title" href="#"><img src="./image/01.jpg"><span>小米Note2</span><!--没有任何意义的行内元素--></a><!--超链接--><a class="buy" href="#">选购</a></li>
+                                <li><a class="title" href="#"><img src="./image/01.jpg"><span>小米Note2</span><!--没有任何意义的行内元素--></a><!--超链接--><a class="buy" href="#">选购</a></li>
+                                <li><a class="title" href="#"><img src="./image/01.jpg"><span>小米Note2</span><!--没有任何意义的行内元素--></a><!--超链接--><a class="buy" href="#">选购</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="firstLi">电视 盒子       >
+        
+                    </li>
+                    <li class="firstLi">路由器       >
+        
+                    </li>
+                    <li class="firstLi">手机 电话卡       >
+        
+                    </li>
+                    <li class="firstLi">笔记本 平板       >
+        
+                    </li>
+                    <li class="firstLi">电视 盒子       >
+        
+                    </li>
+                    <li class="firstLi">手机 电话卡       >
+        
+                    </li>
+                    <li class="firstLi">电视 盒子       >
+        
+                    </li>
+                    <li class="firstLi">耳机       >
+        
+                    </li>
+                    <li class="firstLi">生活  健康       >
+        
+                    </li>
+                  
+                </ul>
+            </div>
+            <ul id="li" style="position: absolute;left: 95%;">
+                <li class="on"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <div style="clear: both;"></div>
+            <div class="an" id="an">
+                <a href="javascript:;" id="prev" style="position: absolute;left: 240px;"><</a>
+                <a href="javascript:;" id="next" class="an-a2">></a>
+            </div>
+        </div>
+    </div>
+
+
+            
+       
+    </div>
+
+    <div class="active">
+        <div class="cen">
+            <div class="act-r">
+                <ul>
+                    <li><a href=""><img src="./images/xm02.jpg" alt=""></a></li>
+                    <li><a href=""><img src="./images/xm02.jpg" alt=""></a></li>
+                    <li><a href=""><img src="./images/xm02.jpg" alt=""></a></li>
+                    <li><a href=""><img src="./images/xm02.jpg" alt=""></a></li>
+                    <li><a href=""><img src="./images/xm02.jpg" alt=""></a></li>
+                    <li><a href=""><img src="./images/xm02.jpg" alt=""></a></li>
+                </ul>
+            </div>
+            <div class="act-l">
+                <ul>
+                    <li><a href="xiangqing.html"><img src="./images/xm03.jpg" alt="" style="width: 315px;height: 170px;"></a></li>
+                    <li><a href="xiangqing.html"><img src="./images/xm03.jpg" alt="" style="width: 315px;height: 170px;"></a></li>
+                    <li><a href="xiangqing.html"><img src="./images/xm03.jpg" alt="" style="width: 315px;height: 170px;"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="ms">
+        <div class="ceno">
+            
+                <div class="se-kl" style="float: left;background-color: #f1eded;">
+                    <div class="se-cn" style="color: red;">秒杀10:00场</div>
+                    
+                    <i class="se-io" style="background: url(./images/xm10.jpg) no-repeat ;background-size: 20px 33px;"></i>
+                    <div class="se-info">距离结束还剩</div>
+                    <div class="se-count">
+                        <div class="se-day"></div>
+                        <div class="se-hour"><span class="se-txt">00</span></div>
+                        <div class="se-min"><span class="se-txt">00</span></div>
+                        <div class="se-sec"><span class="se-txt">00</span></div>
+                    </div>
+                </div>
+
+         </div>
+
+
+    </div>
+
+
+
+    <div class="prac">
+        <div class="cen">
+            <a href=""><img src="./images/xm08.jpg" alt="" style="width: 1300px; padding-top: 30px;"></a>
+        </div>
+    </div>
+
+
+    <div class="main">
+        <div class="cen">
+        
+            <div class="hongmi">
+            <a href="xiangqing.html" style="width: 255px;height: 350px;display: inline-block;">
+                <div class="hm-top">
+                    <img src="./image/5.jpg" alt="" style="margin-left: 30px;">
+                    <h4 style="text-align: center;margin-top: 10px;">Redmi红米电视   70英寸</h4>
+                    <p style="text-align: center;margin-top: 10px;">70英寸震撼巨屏，4k画质，细腻如珍</p>
+                    <p style="text-align: center;color: tomato;margin-top: 30px;">3199元</p>
+                </div>
+            </a>
+           
+            </div>
+            <div class="dianshi">
+            <a href="xiangqing.html" style="width: 255px;height: 350px;display: inline-block;">
+                <img src="./image/xm3.jpg" alt="" style="margin-left: 30px;">
+                <h4 style="text-align: center;margin-top: 10px;">Redmi红米电视   70英寸</h4>
+                <p style="text-align: center;margin-top: 10px;">70英寸震撼巨屏，4k画质，细腻如珍</p>
+                <p style="text-align: center;color: tomato;margin-top: 30px;">3199元</p>
+            </a>
+            
+            </div>
+            <div class="qup">
+            <a href="xiangqing.html" style="width: 255px;height: 350px;display: inline-block;">
+                <img src="./image/xm4.jpg" alt="" style="margin-left: 30px;">
+                    <h4 style="text-align: center;margin-top: 10px;">Redmi红米电视   70英寸</h4>
+                    <p style="text-align: center;margin-top: 10px;">70英寸震撼巨屏，4k画质，细腻如珍</p>
+                    <p style="text-align: center;color: tomato;margin-top: 30px;">3199元</p>
+            </a>
+            
+            </div>
+            <div class="kongtiao">
+            <a href="xiangqing.html" style="width: 255px;height: 350px;display: inline-block;">
+                <img src="./image/xm5.jpg" alt="" style="margin-left: 30px;">
+                <h4 style="text-align: center;margin-top: 10px;">Redmi红米电视   70英寸</h4>
+                <p style="text-align: center;margin-top: 10px;">70英寸震撼巨屏，4k画质，细腻如珍</p>
+                <p style="text-align: center;color: tomato;margin-top: 30px;">3199元</p>
+            </a>
+            
+            </div>
+            <div class="xiyiji">
+            <a href="xiangqing.html" style="width: 255px;height: 350px;display: inline-block;">
+                <img src="./image/xm2.jpg" alt="" style="margin-left: 30px;">
+                <h4 style="text-align: center;margin-top: 10px;">Redmi红米电视   70英寸</h4>
+                <p style="text-align: center;margin-top: 10px;">70英寸震撼巨屏，4k画质，细腻如珍</p>
+                <p style="text-align: center;color: tomato;margin-top: 30px;">3199元</p>
+            </a>
+            
+            </div>
+<!-- ----------------------------------------------------- -->
+            <div class="hongmi">
+                <a href="xiangqing.html" style="width: 255px;height: 350px;display: inline-block;">
+                    <div class="hm-top">
+                        <img src="./image/xm6.jpg" alt="" style="margin-left: 30px;">
+                        <h4 style="text-align: center;margin-top: 10px;">Redmi红米电视   70英寸</h4>
+                        <p style="text-align: center;margin-top: 10px;">70英寸震撼巨屏，4k画质，细腻如珍</p>
+                        <p style="text-align: center;color: tomato;margin-top: 30px;">3199元</p>
+                    </div>
+                </a>
+                </div>
+                <div class="dianshi">
+                <a href="xiangqing.html" style="width: 255px;height: 350px;display: inline-block;">
+                    <img src="./image/6.jpg" alt="" style="margin-left: 30px;">
+                    <h4 style="text-align: center;margin-top: 10px;">Redmi红米电视   70英寸</h4>
+                    <p style="text-align: center;margin-top: 10px;">70英寸震撼巨屏，4k画质，细腻如珍</p>
+                    <p style="text-align: center;color: tomato;margin-top: 30px;">3199元</p>
+                </a>
+                </div>
+                <div class="qup">
+                <a href="xiangqing.html" style="width: 255px;height: 350px;display: inline-block;">
+                    <img src="./image/7.jpg" alt="" style="margin-left: 30px;">
+                        <h4 style="text-align: center;margin-top: 10px;">Redmi红米电视   70英寸</h4>
+                        <p style="text-align: center;margin-top: 10px;">70英寸震撼巨屏，4k画质，细腻如珍</p>
+                        <p style="text-align: center;color: tomato;margin-top: 30px;">3199元</p>
+                </a>
+                </div>
+                <div class="kongtiao">
+                <a href="xiangqing.html" style="width: 255px;height: 350px;display: inline-block;">
+                    <img src="./image/02.jpg" alt="" style="margin-left: 30px;">
+                    <h4 style="text-align: center;margin-top: 10px;">Redmi红米电视   70英寸</h4>
+                    <p style="text-align: center;margin-top: 10px;">70英寸震撼巨屏，4k画质，细腻如珍</p>
+                    <p style="text-align: center;color: tomato;margin-top: 30px;">3199元</p>
+                </a>
+                </div>
+                <div class="xiyiji">
+                <a href="xiangqing.html" style="width: 255px;height: 350px;display: inline-block;">
+                    <img src="./image/2.jpg" alt="" style="margin-left: 30px;">
+                    <h4 style="text-align: center;margin-top: 10px;">Redmi红米电视   70英寸</h4>
+                    <p style="text-align: center;margin-top: 10px;">70英寸震撼巨屏，4k画质，细腻如珍</p>
+                    <p style="text-align: center;color: tomato;margin-top: 30px;">3199元</p>
+                </a>
+                </div>
+            
+        
+        </div>
+    </div>
+    <script src="./js/jquery.min.js"></script>
+    <script type="text/javascript">
+		hdp({
+			li:"li",	//默认值：li;默认用li包裹
+			boxid:"boxhdp",	//最外面div  id
+			imgid:"img",	//图片外面id
+			optid:"li",	//opt外面id	
+			an:"an",		//左右按钮id，用于移上显示和隐藏
+			prev:"prev",	//左边箭头id
+			next:"next",	//右边箭头id
+			ms:3000		//多少毫秒切换一张,默认800毫秒
+        })
+        
+        $(document).ready(function () {
+            var oDate = new Date();
+            var nowTime = oDate.getTime(); //现在的毫秒数
+            oDate.setDate(oDate.getDate() + 1); // 设定截止时间为第二天
+            var targetDate = new Date(oDate.toLocaleDateString());
+            run(targetDate);
+        });
+
+        function run(enddate) {
+            getDate(enddate);
+            setInterval("getDate('" + enddate + "')", 500);
+        }
+
+        function getDate(enddate) {
+            var oDate = new Date(); //获取日期对象
+
+            var nowTime = oDate.getTime(); //现在的毫秒数
+            var enddate = new Date(enddate);
+            var targetTime = enddate.getTime(); // 截止时间的毫秒数
+            var second = Math.floor((targetTime - nowTime) / 1000); //截止时间距离现在的秒数
+
+            var day = Math.floor(second / 24 * 60 * 60); //整数部分代表的是天；一天有24*60*60=86400秒 ；
+            second = second % 86400; //余数代表剩下的秒数；
+            var hour = Math.floor(second / 3600); //整数部分代表小时；
+            second %= 3600; //余数代表 剩下的秒数；
+            var minute = Math.floor(second / 60);
+            second %= 60;
+            var spanH = $('.se-txt')[0];
+            var spanM = $('.se-txt')[1];
+            var spanS = $('.se-txt')[2];
+
+            spanH.innerHTML = tow(hour);
+            spanM.innerHTML = tow(minute);
+            spanS.innerHTML = tow(second);
+        }
+
+        function tow(n) {
+            return n >= 0 && n < 10 ? '0' + n : '' + n;
+        }
+     
+
+
+        $("#Tz_banner .firstLi .info").each(function(){
+
+        var $li = $(this).find("li");//获取到所有info下面的li
+        var length =$li.length;//得到info下面所有li的数量
+        var width = $li.width();//获取li的宽度
+        var height = $li.height();//获取li的高度
+        var col = Math.ceil(length/6);//向上取整
+        $(this).width(col*width);
+        $li.each(function(i){
+            var x = Math.floor(i/6);//向下取整
+            var y = i%6;//取余数
+            $(this).css({
+                left:x*width + "px",
+                top:y*height + "px"
+            });
+        });
+
+        });
+        $("#Tz_banner .firstLi").hover(function(){
+        $(this).find(".info").show();
+        },function(){
+        $(this).find(".info").hide();
+        });
+	</script>
+</body>
+</html>
